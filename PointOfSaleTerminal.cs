@@ -7,7 +7,7 @@ namespace PointOfSale
     public class PointOfSaleTerminal
     {
         Dictionary<char, Pricing> pricings;
-        Dictionary<char, int> cartItems = new Dictionary<char, int>();
+        Dictionary<char, int> scannedProducts = new Dictionary<char, int>();
 
         internal void SetPricing(Dictionary<char, Pricing> pricings)
         {
@@ -16,21 +16,21 @@ namespace PointOfSale
 
         public double CalculateTotal()
         {
-            return cartItems.Sum(p => pricings[p.Key].CalculatePrice(p.Value));
+            return scannedProducts.Sum(p => pricings[p.Key].CalculatePrice(p.Value));
         }
 
         public void Scan(string code)
         {
-            foreach (var itemCode in code)
-                Scan(itemCode);
+            foreach (var productCode in code)
+                Scan(productCode);
         }
 
         private void Scan(char itemCode)
         {
             int timesScanned;
-            if (!cartItems.TryGetValue(itemCode, out timesScanned))
-                cartItems.Add(itemCode, 0);
-            cartItems[itemCode]++;
+            if (!scannedProducts.TryGetValue(itemCode, out timesScanned))
+                scannedProducts.Add(itemCode, 0);
+            scannedProducts[itemCode]++;
         }
     }
 }
