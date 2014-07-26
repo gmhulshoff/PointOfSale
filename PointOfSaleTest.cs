@@ -7,7 +7,7 @@ public class PointOfSaleTest
     PointOfSaleTerminal terminal;
 
     [SetUp]
-    public void When()
+    public void When_creating_new_point_of_sales_terminal()
     {
         terminal = new PointOfSaleTerminal();
         terminal.SetPricing(new Dictionary<char, Pricing>{
@@ -26,7 +26,7 @@ public class PointOfSaleTest
     [TestCase("ABCDABA", Result = 13.25)]
     [TestCase("CCCCCCC", Result = 6)]
     [TestCase("ABCD", Result = 7.25)]
-    public double Then_total_is_calculated_correct(string product)
+    public double Then_total_is_calculated_correct_after_scanning(string product)
     {
         terminal.Scan(product);
         return terminal.CalculateTotal();
