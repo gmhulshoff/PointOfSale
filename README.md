@@ -9,11 +9,11 @@ Here are the products listed by code and the prices to use (there is no sales ta
 <tr><td>D</td><td>$0.75</td></tr>
 </table>
 The interface at the top level PointOfSaleTerminal service object should look something like this. You are free to design/implement the rest of the code however you wish, including how you specify the prices in the system:<br/><br/>
-PointOfSaleTerminal terminal = new PointOfSaleTerminal();
-terminal.SetPricing(...);
-terminal.Scan("A");
-terminal.Scan("C");
-... etc.
+PointOfSaleTerminal terminal = new PointOfSaleTerminal();<br/>
+terminal.SetPricing(...);<br/>
+terminal.Scan("A");<br/>
+terminal.Scan("C");<br/>
+... etc.<br/>
 double result = terminal.CalculateTotal();<br/><br/>
 Here are the minimal inputs you should use for your test cases. These test cases must be shown to work in your program:<br/><br/>
 Scan these items in this order: ABCDABA; Verify the total price is $13.25.<br/>
