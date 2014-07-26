@@ -9,7 +9,7 @@ namespace PointOfSale
         private Dictionary<char, int> scannedProducts = new Dictionary<char, int>();
         private Dictionary<char, Pricing> pricings;
 
-        internal void SetPricing(Dictionary<char, Pricing> pricings)
+        public void SetPricing(Dictionary<char, Pricing> pricings)
         {
             this.pricings = pricings;
         }
