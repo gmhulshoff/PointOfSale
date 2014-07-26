@@ -6,8 +6,8 @@ namespace PointOfSale
 {
     public class PointOfSaleTerminal
     {
-        Dictionary<char, Pricing> pricings;
-        Dictionary<char, int> scannedProducts = new Dictionary<char, int>();
+        private Dictionary<char, int> scannedProducts = new Dictionary<char, int>();
+        private Dictionary<char, Pricing> pricings;
 
         internal void SetPricing(Dictionary<char, Pricing> pricings)
         {
